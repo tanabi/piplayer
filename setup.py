@@ -25,5 +25,6 @@ setup(
     install_requires=[
         'mutagen',
         'tornado'
-    ]
+    ],
+    zip_safe=False
 )
