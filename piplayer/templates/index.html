@@ -48,8 +48,7 @@
       </tbody>
     </table>
   </body>
-  <script>
-    <!--
+  <script type="text/javascript">
     // We're not using a JS library like JQuery (which would make this cleaner)
     // cause I want this to be ultra light weight.  In fact, this could
     // probably be done better with pure HTML.
@@ -68,5 +67,14 @@
     title.addEventListener("click", function() {
         window.location = "?play=1";
     });
+
+    {% if is_playing %}
+      // We only do this if something is playing, otherwise its a waste
+      // of time
+      setTimeout(function() {
+          window.location = "/";
+      }, {{ song_remaining }});
+    {% end %}
+
   </script>
 </html>
