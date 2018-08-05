@@ -17,6 +17,7 @@ setup(
     url="https://github.com/tanabi/piplayer",
     packages=[
         'piplayer',
+        'piplayer.templates'
     ],
     long_description=open(path.join(path.dirname(__file__), 'README.md')).read(),
     scripts=[
@@ -26,5 +27,7 @@ setup(
         'mutagen',
         'tornado'
     ],
-    zip_safe=False
+    zip_safe=False,
+    include_package_data=True,
+    package_data={'': ['*.html']}
 )
