@@ -16,10 +16,14 @@ setup(
     keywords="raspberry pi music player tornado backend",
     url="https://github.com/tanabi/piplayer",
     packages=[
-        'tornado',
+        'piplayer',
     ],
     long_description=open(path.join(path.dirname(__file__), 'README.md')).read(),
     scripts=[
         'scripts/piplayer',
+    ],
+    install_requires=[
+        'mutagen',
+        'tornado'
     ]
 )
